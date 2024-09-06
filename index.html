@@ -56,20 +56,25 @@
               <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
             </div>
             <div class="offcanvas-body container-fluid">
-              <div class="row">
+              <!-- Input for TodosList -->
+              <div id="todosList" class="row">
                 <div class="col-12">
-                  <form onsubmit="" class="row align-items-center justify-content-between text-center">
+                  <form onsubmit="app.TodoController.createTodo()"
+                    class="row align-items-center justify-content-between text-center">
                     <div class="col-10 form-floating mb-3">
-                      <input required type="text" class="form-control" id="tag" name="tag" placeholder="add Todo"
-                        minlength="3" maxlength="15">
+                      <input required type="text" class="form-control" id="description" name="description"
+                        placeholder="add Todo" minlength="3" maxlength="30">
                       <label for="floatingInput">Add Todo</label>
                     </div>
                     <div class="col-2">
                       <button class="rounded" type="submit"><i class="mdi mdi-plus"></i></button>
                     </div>
                   </form>
-
                 </div>
+                <!-- <div class="col-12 d-flex justify-content-between align-items-center border rounded">
+                  <input class="fs-2" type="checkbox">
+                  <span>Meditate for an Hour</span> <i role="button" class="mdi mdi-delete fs-2"></i>
+                </div> -->
               </div>
             </div>
           </div>
