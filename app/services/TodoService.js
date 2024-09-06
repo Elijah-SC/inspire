@@ -1,8 +1,18 @@
 import { AppState } from "../AppState.js";
 import { Todo } from "./Todo.js";
 import { api } from "./AxiosService.js"
+import { Pop } from "../utils/Pop.js";
 
 class TodoService {
+  async deleteTodo(todoId) {
+    const response = await api.delete(`api/todos/${todoId}`)
+    console.log(response.data, todoId)
+
+    const todoIndex = AppState.Todos.findIndex(todo => todo.id == todoId)
+    if (todoIndex < 0) return
+    AppState.Todos.splice(todoIndex, 1)
+    Pop.toast(`deleted Todo`)
+  }
   async getTodos() {
     const response = await api.get(`api/todos`)
     // console.log(`My Todos`, response.data);
@@ -19,6 +29,23 @@ class TodoService {
     const newTodo = new Todo(response.data)
     AppState.Todos.push(newTodo)
     console.log(`Added`, newTodo, `to AppState`)
+    Pop.toast(`Created Todo`)
+  }
+  async completeTodo(todoId) {
+    const todos = AppState.Todos
+
+    const todoIndex = todos.findIndex(todo => todo.id == todoId)
+
+    const todo = todos[todoIndex]
+    // console.log(`Pulled todo out by Index`, todo)
+    const todoData = { completed: !todo.completed }
+
+    const response = await api.put(`api/todos/${todoId}`, todoData)
+    console.log(`updated Todo`, response.data)
+
+
+
+
   }
 }
 

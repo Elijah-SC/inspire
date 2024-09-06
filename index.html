@@ -56,8 +56,8 @@
               <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
             </div>
             <div class="offcanvas-body container-fluid">
-              <!-- Input for TodosList -->
-              <div id="todosList" class="row">
+
+              <div class="row">
                 <div class="col-12">
                   <form onsubmit="app.TodoController.createTodo()"
                     class="row align-items-center justify-content-between text-center">
@@ -71,10 +71,14 @@
                     </div>
                   </form>
                 </div>
-                <!-- <div class="col-12 d-flex justify-content-between align-items-center border rounded">
-                  <input class="fs-2" type="checkbox">
-                  <span>Meditate for an Hour</span> <i role="button" class="mdi mdi-delete fs-2"></i>
-                </div> -->
+                <!-- Input for TodosList -->
+                <div id="todosList">
+                  <!-- <div class="col-12 d-flex justify-content-between align-items-center border rounded">
+                    <input class="fs-2" type="checkbox">
+                    <span>Meditate for an Hour</span> <i role="button" class="mdi mdi-delete fs-2"></i>
+                  </div> -->
+
+                </div>
               </div>
             </div>
           </div>

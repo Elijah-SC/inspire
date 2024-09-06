@@ -8,7 +8,7 @@ export class TodoController {
   constructor() {
     console.log(`todo controller is live`);
     AppState.on(`user`, this.getTodos)
-    AppState.on(`user`, this.drawTodos)
+    AppState.on(`Todos`, this.drawTodos)
   }
   async createTodo() {
     try {
@@ -34,9 +34,32 @@ export class TodoController {
   }
 
   drawTodos() {
+    console.log(`drawing Todos`);
     const todos = AppState.Todos
     let todosHTML = ``
     todos.forEach(todo => todosHTML += todo.todoListTemplate)
     setHTML(`todosList`, todosHTML)
+  }
+
+  async deleteTodo(todoId) {
+    try {
+      const doesUserWantToDelete = await Pop.confirm()
+      if (!doesUserWantToDelete) return
+      // console.log(`Deleting Todo`, todoId);
+      await todoService.deleteTodo(todoId)
+    } catch (error) {
+      Pop.error(error)
+      console.error();
+
+    }
+  }
+
+  async completeTodo(todoId) {
+    try {
+      await todoService.completeTodo(todoId)
+    } catch (error) {
+      Pop.error(error)
+      console.error();
+    }
   }
 }
