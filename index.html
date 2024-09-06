@@ -39,14 +39,55 @@
   </header>
 
   <!-- SECTION -->
-  <main>
-    
+  <main class="container-fluid">
+    <div class="row justify-content-end">
+      <div class="col-1">
+        <section class="pt-1">
+
+          <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample"
+            aria-controls="offcanvasExample">
+            Todo list
+          </button>
+
+          <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample"
+            aria-labelledby="offcanvasExampleLabel">
+            <div class="offcanvas-header">
+              <h5 class="offcanvas-title" id="offcanvasExampleLabel">Todo List</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body container-fluid">
+              <div class="row">
+                <div class="col-12">
+                  <form onsubmit="" class="row align-items-center justify-content-between text-center">
+                    <div class="col-10 form-floating mb-3">
+                      <input required type="text" class="form-control" id="tag" name="tag" placeholder="add Todo"
+                        minlength="3" maxlength="15">
+                      <label for="floatingInput">Add Todo</label>
+                    </div>
+                    <div class="col-2">
+                      <button class="rounded" type="submit"><i class="mdi mdi-plus"></i></button>
+                    </div>
+                  </form>
+
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </section>
+      </div>
+    </div>
+
   </main>
 
   <!-- SECTION -->
   <footer class="bg-dark text-light">
-    <div class="text-center no-select">
+    <div class="text-center no-select d-flex justify-content-between">
       <p class="mb-0"><small>Made with 💖 by CodeWorks</small></p>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+        aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
     </div>
   </footer>
 
