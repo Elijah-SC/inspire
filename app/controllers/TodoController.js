@@ -10,6 +10,7 @@ export class TodoController {
     AppState.on(`user`, this.getTodos)
     AppState.on(`Todos`, this.drawTodos)
     AppState.on(`Todos`, this.drawUncompletedTodos)
+    AppState.on(`Todos`, this.showTodoButton)
   }
   async createTodo() {
     try {
@@ -73,7 +74,11 @@ export class TodoController {
     })
     console.log(`you have`, uncompletedTodos, `tasks left to do`);
     setHTML(`uncompletedTodos`, uncompletedTodos)
+  }
 
-
+  showTodoButton() {
+    if (AppState.user == null) return
+    const todoFormElm = document.getElementById(`todoButton`)
+    todoFormElm.classList.remove(`invis`)
   }
 }

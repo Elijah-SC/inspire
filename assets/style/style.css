@@ -9,3 +9,29 @@
 .profile-picture.profile-picture-sm {
   height: 64px;
 }
+
+p {
+  margin-bottom: unset;
+}
+
+.pl {
+  padding-left: 4em;
+}
+
+.paddingOverride {
+  padding: unset !important;
+}
+
+.invis {
+  opacity: 0;
+}
+
+body {
+  background-size: cover;
+}
+
+.pill-background {
+  background-color: #0d0d0d71;
+  backdrop-filter: blur(5px);
+
+}

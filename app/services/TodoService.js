@@ -1,5 +1,5 @@
 import { AppState } from "../AppState.js";
-import { Todo } from "./Todo.js";
+import { Todo } from "../models/Todo.js";
 import { api } from "./AxiosService.js"
 import { Pop } from "../utils/Pop.js";
 

@@ -1,4 +1,5 @@
-import { Todo } from "./services/Todo.js"
+import { Img } from "./models/Img.js"
+import { Todo } from "./models/Todo.js"
 import { EventEmitter } from './utils/EventEmitter.js'
 import { createObservableProxy } from './utils/ObservableProxy.js'
 
@@ -9,6 +10,11 @@ class ObservableAppState extends EventEmitter {
   account = null
   /**@type {Todo[]} */
   Todos = []
+
+  /**@type {Img} */
+  Img = null
+
+
 }
 
 export const AppState = createObservableProxy(new ObservableAppState())
