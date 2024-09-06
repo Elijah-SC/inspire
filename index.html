@@ -41,12 +41,13 @@
   <!-- SECTION -->
   <main class="container-fluid">
     <div class="row justify-content-end">
-      <div class="col-1">
+      <div class="col-3">
         <section class="pt-1">
 
-          <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample"
-            aria-controls="offcanvasExample">
-            Todo list
+          <button class="btn btn-outline-dark d-flex invsible" type="button" data-bs-toggle="offcanvas"
+            data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
+            <i class="mdi mdi-menu-down fs-3"></i>
+            <p> <span id="uncompletedTodos"></span> tasks left</p>
           </button>
 
           <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample"

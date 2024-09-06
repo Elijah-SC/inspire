@@ -9,6 +9,7 @@ export class TodoController {
     console.log(`todo controller is live`);
     AppState.on(`user`, this.getTodos)
     AppState.on(`Todos`, this.drawTodos)
+    AppState.on(`Todos`, this.drawUncompletedTodos)
   }
   async createTodo() {
     try {
@@ -61,5 +62,18 @@ export class TodoController {
       Pop.error(error)
       console.error();
     }
+  }
+
+  drawUncompletedTodos() {
+    const todos = AppState.Todos
+    let uncompletedTodos = 0
+    todos.forEach(todo => {
+      if (todo.completed == false)
+        uncompletedTodos += 1
+    })
+    console.log(`you have`, uncompletedTodos, `tasks left to do`);
+    setHTML(`uncompletedTodos`, uncompletedTodos)
+
+
   }
 }

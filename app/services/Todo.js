@@ -1,7 +1,7 @@
 export class Todo {
   constructor(data) {
     this.description = data.description
-    this.completed = false
+    this.completed = data.completed
     this.id = data.id
   }
 

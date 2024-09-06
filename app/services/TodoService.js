@@ -43,9 +43,10 @@ class TodoService {
     const response = await api.put(`api/todos/${todoId}`, todoData)
     console.log(`updated Todo`, response.data)
 
+    const updateTodo = new Todo(response.data)
 
-
-
+    todos.splice(todoIndex, 1, updateTodo)
+    console.log(AppState.Todos)
   }
 }
 
