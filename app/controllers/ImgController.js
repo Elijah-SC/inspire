@@ -1,6 +1,7 @@
 import { AppState } from "../AppState.js";
 import { imgService } from "../services/ImgService.js";
 import { Pop } from "../utils/Pop.js";
+import { setHTML } from "../utils/Writer.js";
 
 export class ImgController {
   constructor() {
@@ -11,6 +12,7 @@ export class ImgController {
   drawBgImg() {
     const img = AppState.Img
     document.body.style.backgroundImage = `url(${img.imgUrl})`
+    setHTML(`img-author`, img.author)
 
   }
   async getBgImg() {

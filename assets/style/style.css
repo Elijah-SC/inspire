@@ -35,3 +35,7 @@ body {
   backdrop-filter: blur(5px);
 
 }
+
+.copy-right {
+  font-size: 12px;
+}
