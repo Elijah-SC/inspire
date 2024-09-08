@@ -78,12 +78,28 @@
 
   <!-- SECTION -->
   <footer class="container">
+    <div class="row justify-content-center text-light">
+      <div class="col-12">
+        <div class="magic-text">
+          <p class="text-center quote" id="quote"></p>
+
+          <p class="text-end quote-author secret-text">-<span id="quote-author"></span></p>
+        </div>
+
+      </div>
+
+
+    </div>
     <div class="row justify-content-around">
-      <div class="col-12 pill-background text-light m-3 mb-5 p-3 rounded-pill">
-        <div class="d-flex justify-content-around align-items-center">
-          <div>75 F Sunny</div>
-          <h1>12:00</h1>
-          <div class="justify-content-end align-items-center d-flex" id="authstate"></div>
+      <div class="col-12">
+
+        <div class="pill-background text-light m-3 mb-5 p-3 rounded-pill">
+          <div class="row justify-content-around align-items-center">
+            <div onclick="app.WeatherController.changeUnit()" role="button" class="col-sm-3 text-center">
+              Temp <span id="weather"></span></div>
+            <h1 class="col-sm-4 flex-grow text-center" id="time">Now</h1>
+            <div class="col-sm-4 justify-content-center align-items-center d-flex" id="authstate"></div>
+          </div>
 
         </div>
       </div>

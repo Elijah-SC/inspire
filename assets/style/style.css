@@ -10,8 +10,10 @@
   height: 64px;
 }
 
-p {
+p,
+h1 {
   margin-bottom: unset;
+  padding: unset;
 }
 
 .pl {
@@ -28,6 +30,7 @@ p {
 
 body {
   background-size: cover;
+  background-position: center;
 }
 
 .pill-background {
@@ -38,4 +41,34 @@ body {
 
 .copy-right {
   font-size: 12px;
+  text-shadow: 3px 2px 2px black;
+
+}
+
+.quote {
+  text-shadow: 3px 2px 2px black;
+}
+
+
+.quote-author {
+  text-shadow: 3px 2px 2px black;
+
+
+}
+
+.secret-text {
+  opacity: 0;
+  transition: ease-in .5s;
+}
+
+.magic-text:hover .secret-text {
+  opacity: unset;
+}
+
+.magic-text:hover {
+  background: rgba(0, 0, 0, 0.087);
+  border-radius: 5px;
+  backdrop-filter: blur(5px);
+  transition: all .5s;
+  cursor: pointer;
 }

@@ -57,7 +57,7 @@ function authButton(user) {
   if (AuthService.loading) { return '' }
   return user && user.isAuthenticated
     ? /* html */ `
-    <button class="btn btn-small btn-dark text-muted selectable" onclick="app.AuthController.logout()" title="logout"><i class="mdi mdi-logout f-16 text-white"></i></button>
+    <button class="btn btn-small btn-outline-light text-muted selectable" onclick="app.AuthController.logout()" title="logout"><i class="mdi mdi-logout f-16 text-white"></i></button>
   `
     : /* html */ `
     <button class="btn btn-dark selectable" onclick="app.AuthController.login()">login</button>
@@ -70,7 +70,7 @@ function avatarTemplate(account) {
     <div class="mr-2">
       <a href="/#/account" class="text-white nav-link selectable rounded" title="Manage Account">
         <img class="rounded-circle" src="${account.picture}" alt="${account.name}" height="45"/>
-        <span class="mx-1">${account.name}</span>
+        <span class="mx-1"></span>
       </a>
     </div>`
     : AuthService.loading

@@ -30,7 +30,7 @@ export class Account {
           <input type="url" class="form-control" required name="picture" placeholder="picture" value="${this.picture}">
         </div>
         <div>
-          <button type="submit" class="btn btn-primary w-100 mt-2">Update Account</button>
+          <button type="submit" class="btn btn-outline-light w-100 mt-2">Update Account</button>
         </div>
       </div>
     </form>
