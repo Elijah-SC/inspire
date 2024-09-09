@@ -11,7 +11,6 @@ class TodoService {
     const todoIndex = AppState.Todos.findIndex(todo => todo.id == todoId)
     if (todoIndex < 0) return
     AppState.Todos.splice(todoIndex, 1)
-    Pop.toast(`deleted Todo`)
   }
   async getTodos() {
     const response = await api.get(`api/todos`)
@@ -29,7 +28,6 @@ class TodoService {
     const newTodo = new Todo(response.data)
     AppState.Todos.push(newTodo)
     console.log(`Added`, newTodo, `to AppState`)
-    Pop.toast(`Created Todo`)
   }
   async completeTodo(todoId) {
     const todos = AppState.Todos
