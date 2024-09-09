@@ -67,7 +67,7 @@ body {
 
 .magic-text:hover {
   background: rgba(0, 0, 0, 0.087);
-  border-radius: 5px;
+  border-radius: 100px;
   backdrop-filter: blur(5px);
   transition: all .5s;
   cursor: pointer;
