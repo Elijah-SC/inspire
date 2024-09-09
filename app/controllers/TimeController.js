@@ -11,11 +11,12 @@ export class TimeController {
   drawTime() {
     const date = new Date()
     let time = date.toLocaleTimeString()
-    let start = 4
-    let end = 7
-    let newTime = time.slice(0, start) + time.substring(end)
-
-    // console.log(time)
-    setHTML(`time`, newTime)
+    let mins = date.getMinutes()
+    let hours = date.getHours()
+    let newTime = `${hours}:${mins}`
+    let timeUnit = time.slice(time.length - 2)
+    let formatTime = `${newTime} ${timeUnit}`
+    console.log(time)
+    setHTML(`time`, formatTime)
   }
 }
